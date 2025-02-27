@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikas Pal Portfolio</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: "Atkinson Hyperlegible Mono", serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .navbar {
+            background-color: #111;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 15px 0;
+            transition: all 0.3s ease-in-out;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 0 5px;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s, transform 0.3s, color 0.3s;
+            border-radius: 20px;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+            transform: scale(1.1);
+        }
+
+        .navbar a.active {
+            background-color: #5e7b92;
+            color: black;
+        }
+
+        .container {
+            padding: 100px 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .head {
+            margin-top: 80px;
+            animation: bounceIn 1.5s ease-in-out;
+            font-family: 'Poppins', sans-serif;
+            font-size: 50px;
+            font-weight: bold;
+            background-image: url(image/camera.jpg);
+            color: black;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .hero {
+            font-size: 40px;
+            font-weight: bold;
+
+        }
+
+        .subtext {
+            font: size 30px;
+        }
+
+        .about-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+            animation: slideLeft 1.5s ease-in-out;
+            justify-content: center;
+            flex-wrap: wrap;
+
+        }
+
+        @keyframes slideLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .about-section img {
+            width: 200px;
+            height: 200px;
+            /* border-radius: 50%; */
+            /* object-fit: cover; */
+            /* margin-top: 20px; */
+            height: 320px;
+            width: auto;
+        }
+
+        .about-section h2 {
+            color: orange;
+            font-size: 36px;
+        }
+
+        .about-section p {
+            font-size: 22px;
+        }
+
+        .education-section h2,
+        .hobbies-section h2 {
+            color: orange;
+            font-size: 40px;
+            margin-top: 50px;
+        }
+
+        .education-cards,
+        .hobbies-card {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+
+        }
+
+        .education-card,
+        .hobbies-card {
+            width: 350px;
+            height: 550px;
+            border: 3px solid white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: #222;
+            flex-wrap: wrap;
+            font-size: 10pxpx;
+        }
+
+        .education-card:hover,
+        .hobbies-card:hover {
+            box-shadow: 0 0 30px white;
+        }
+
+        .skills-section {
+            margin-top: 50px;
+        }
+
+        .skills-section h2 {
+            color: orange;
+            font-size: 40px;
+        }
+
+        .skills-container,
+        .hobbies-container {
+            display: flex;
+            justify-content: left;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            width: 500px;
+            height: 400px;
+            border: 2px solid white;
+            /* padding: 20px; */
+            text-align: center;
+            border-radius: 10px;
+            background-color: #222;
+            font-size: 20px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .skill-card img {
+            height: 200px;
+            width: auto;
+        }
+
+        .skill-card:hover {
+            box-shadow: 0 0 29px white;
+        }
+
+        .projects-section h2 {
+            color: orange;
+            font-size: 40px;
+            margin-top: 50px;
+        }
+
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            width: 250px;
+            height: 350px;
+            border: 3px solid white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: #222;
+            font-size: 24px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 0 30px white;
+        }
+
+        #contact {
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        #contact:hover {
+            box-shadow: 0 10px 30px rgba(222, 214, 219, 0.953);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        h3,
+        b {
+            color: red;
+        }
+
+        li {
+            font-size: 30px;
+            /* list-style: none; */
+            text-align: left;
+        }
+
+        .pri-wedding img {
+            height: 350px;
+            width: auto;
+        }
+
+        .pri-wedding {
+            width: 400px;
+            height: 500px;
+        }
+
+        .birthday-party {
+            width: 400px;
+            height: 400px;
+            justify-content: left;
+        }
+
+        .birthday-party img {
+            height: 200px;
+            width: auto;
+        }
+
+        #contact img {
+            height: 60px;
+            width: auto;
+        }
+
+        header img {
+            height: 60px;
+            width: auto;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body><br><br><br><br><br><br>
+    <header>
+        <div class="logo">
+            <p style="font-size:25px;">unique_Patidar_photography</p>
+        </div>
+        <div class="contact-icons">
+            <!-- <button>Contact & Bookings</button> -->
+            <!-- <img src="whatsapp-icon." alt="WhatsApp"> -->
+            <a href="https://www.instagram.com/unique_nit_photography?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"><img src="image/instagram logo.webp"></a>
+            <!-- <img src="linkedin-icon.png" alt="LinkedIn"> -->
+        </div>
+    </header>
+    <div class="navbar">
+        <a href="#about">About</a>
+        <a href="#education">Work</a>
+        <a href="#skills">Photo-shoots</a>
+        <!-- <a href="#projects">Projects</a> -->
+        <a href="#contact">Contact</a>
+    </div><br><br>
+    <div class="head"><br>
+        <div class="hero">Ravi Patidar</div>
+        <div class="subtext">Professional Photographer</div><br><br>
+    </div><br>
+    <div class="container">
+        <h2 style="font-size:40px;color: orange;">About Me</h2>
+        <div id="about" class="about-section">
+            <img src="image/owner.jpg" alt="Vikas Pal">
+            <div>
+
+                <p><b>Name :</b> Ravi Patidar</p>
+                <!-- <p><b>Education:</b> BCA 1st Year</p> -->
+                <p><b>Address : </b>Badi Churlai</p>
+                <p><b>Job Role : </b>Photographer & photo-shop</p>
+                <p><b>Contact No. :</b> 1111111111</p>
+            </div>
+        </div>
+        <div id="education" class="education-section">
+            <h2>Job-Role</h2>
+            <div class="education-cards">
+                <div class="education-card">
+                    <h3 style="font-size: 40px;">Photographer<br>&<br>photo-shop</h3>
+                    <li>Wedding shoot</li>
+                    <li>pri-wedding-shoot</li>
+                    <li>birthday party</li>
+                    <p style="font-size: 30px;">Address :- Neori , Front of SBI kisok<br>
+                </div>
+                <!-- <div class="education-card">
+                    <h3 style="color:orange;">2023-2024</h3>
+                    <h3 style="color:red;">School</h3>
+                    <p>Currently studying at ABC College</p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div id="skills" class="skills-section">
+        <h2>Photo-shoots</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h2>Wedding</h2>
+                <img src="image/mandap.jpg">
+            </div>
+            <div class="skill-card , pri-wedding">
+                <h2>Pre-wedding</h2>
+                <img src="image/pri wedding.jpeg" </div><br><br><br><br><br><br>
+                <div class="skill-card , birthday-party">
+                    <h2>birthday-party</h2>
+                    <img src="image/birthday.jpeg">
+                    <div>
+                        <!-- <div class="skill-card">React<br>None</div>
+            <div class="skill-card">Node.js<br>None</div> -->
+                    </div>
+                </div>
+                <!-- <div id="projects" class="projects-section">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <p>A brief description of the project.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>A brief description of the project.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 3</h3>
+                <p>A brief description of the project.</p>
+            </div>
+        </div> -->
+                <!-- </div> -->
+                <!-- <div id="hobbies" class="hobbies-section">
+        <h2>Hobbies</h2>
+        <div class="hobbies-container">
+            <div class="hobbies-card">
+                <p>Describe your hobbies here.</p>
+            </div>
+        </div>
+    </div><br><br> --><br><br>
+
+                <section id="contact">
+                    <h1>Contact Me</h1>
+
+                    <a href="https://www.instagram.com/unique_nit_photography?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target="_blank"><img src="image/instagram logo.webp"></a>
+
+                    <a href="" target="_blank"><img src="image/facebook logo.webp"></a>
+                    <!-- <a href="" target="_blank"><img src="image/zed pay logo.webp"></a> -->
+
+                </section>
+                <footer>
+                    <p>&copy; Make by Abhishek Surya</p>
+                    <a href="https://www.instagram.com/abhishek_23v?igsh=b3c2cXY1bGw4aHdw" target="_blank"><img
+                            src="image/instagram logo.webp"style=" height: 60px;
+            width: auto;"></a>
+                </footer><br>
+</body>
+
+</html>
